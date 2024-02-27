@@ -1,11 +1,13 @@
 <?php
 require "functions.php";
 require "Database.php";
+$config = require ("config.php");
 
 echo "<center>Welcome to My Blog! :D</center>";
 
-$db = new Database();
-$posts = $db->execute("SELECT * FROM posts")
+$db = new Database($config);
+$posts = $db
+            ->execute("SELECT * FROM posts")
             ->fetchAll();
 
 echo "<ul>";
