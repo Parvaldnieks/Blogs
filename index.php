@@ -13,15 +13,17 @@ echo "</form>";
 
 
 $query = "SELECT * FROM posts";
+$params = [];
 if(isset($_GET["id"]) && $_GET["id"] !="") {
     $id = $_GET["id"];
-    $query = "SELECT * FROM posts WHERE id=$id";
+    $query = $query . " WHERE id=:id";
+    $params = [":id" => $id];
 }
 
 
 $db = new Database($config);
 $posts = $db
-            ->execute($query)
+            ->execute($query, $params)
             ->fetchAll();
 
 echo "<ul>";

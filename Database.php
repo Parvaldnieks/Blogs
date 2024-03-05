@@ -11,9 +11,9 @@ class Database {
       $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     }
 
-public function execute($que_string) {
+public function execute($que_string, $params) {
 $que = $this->pdo->prepare($que_string);
-$que->execute();
+$que->execute($params);
 return $que;
     }
 }
