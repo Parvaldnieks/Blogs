@@ -4,6 +4,8 @@ require "Database.php";
 
 $config = require("config.php");
 
+$db = new Database($config);
+
 $query = "SELECT * FROM posts";
 $params = [];
 
@@ -22,9 +24,9 @@ if (isset($_GET["category"]) && $_GET["category"] != "") {
   $params[":category"] = $category;
 }
 
-$db = new Database($config);
 $posts = $db
           ->execute($query, $params)
           ->fetchAll();
 
-require "index.view.php";
+$title = "Posts";
+require "views/index.view.php";
