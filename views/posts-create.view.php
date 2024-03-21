@@ -5,10 +5,10 @@
 
 <form method="POST">
     <label>Title:
-        <input name="matiss" />
+        <input name="title" />
     </label>
     <label>Category ID:
-        <input name="category-id" />
+        <input name="category_id" />
     </label>
     <button>Poga</button>
 </form>
