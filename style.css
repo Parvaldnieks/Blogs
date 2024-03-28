@@ -1,0 +1,8 @@
+.delete-form {
+    display: inline-block;
+}
+
+button {
+    background-color: tomato;
+    border: 10px;
+}

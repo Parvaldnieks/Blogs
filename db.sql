@@ -77,3 +77,5 @@ SELECT * FROM posts
 JOIN categories
 ON posts.category_id = categories.id;
 */
+
+-- DELETE FROM posts WHERE id = 8;
