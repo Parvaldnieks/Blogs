@@ -8,15 +8,13 @@ class Validator {
         return is_string($data)
                && strlen($data) >= $min
                && strlen($data) <= $max;
+            }
 
-    // static public function id($id, $min = 1, $max = 3) {
-    //     $id = $id;
+    static public function number($data, $min = 0, $max = INF) {
+           $data = trim($data);
 
-    //     if($id < $min || $id > $max) {
-    //         return false;
-    //     } else {
-    //         return true;
-    //     }
-    // }
-}
-}
+        return is_numeric($data)
+               && strlen($data) >= $min
+               && strlen($data) <= $max;
+            }
+    }
