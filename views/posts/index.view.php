@@ -11,7 +11,7 @@
     <button>Filter by category</button>
   </form>
 
-  <h1>Posts</h1>
+  <h1>Posts and secret dashboard</h1>
 
   <ul>
     <?php foreach($posts as $post) { ?>
@@ -24,4 +24,9 @@
 
     <?php } ?>
   </ul>
+
+  <form action="/logout" method="POST">
+    <button>Logout</button>
+</form>
+
 <?php require "views/components/footer.php" ?>
